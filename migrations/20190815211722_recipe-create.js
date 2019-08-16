@@ -28,6 +28,8 @@ exports.up = function(knex) {
                 .unsigned()
                 .references('id')
                 .inTable('ingredients')
+            table.float('quantity')
+                .notNullable();
             table.primary(['recipe_id', 'ingredient_id']);
         })
         .createTable('recipe_steps', table => {
